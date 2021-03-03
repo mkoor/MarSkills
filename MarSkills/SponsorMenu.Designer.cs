@@ -297,6 +297,7 @@
             this.comboBoxRunner.Name = "comboBoxRunner";
             this.comboBoxRunner.Size = new System.Drawing.Size(247, 23);
             this.comboBoxRunner.TabIndex = 31;
+            this.comboBoxRunner.SelectedIndexChanged += new System.EventHandler(this.comboBoxRunner_SelectedIndexChanged);
             // 
             // label7
             // 

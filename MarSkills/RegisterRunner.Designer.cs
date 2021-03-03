@@ -363,6 +363,7 @@
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImage.TabIndex = 77;
             this.pictureBoxImage.TabStop = false;
+            this.pictureBoxImage.Click += new System.EventHandler(this.pictureBoxImage_Click);
             // 
             // Logo
             // 

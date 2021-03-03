@@ -51,14 +51,13 @@ namespace MarSkills
         void ShowRunners()
         {
             comboBoxRunner.Items.Clear();
-            foreach (User user in Program.mskills.User )
+
+            foreach (Runner run in Program.mskills.Runner)
             {
-                if (user.RoleId == "R")
-                {
-                    string[] item = { user.LastName + " ", user.FirstName + " - " };
-                    comboBoxRunner.Items.Add(string.Join(" ", item));
-                }
+                string[] item = { run.User.FirstName + " " + run.User.LastName + " - " + "(" + run.CountryCode + ")" };
+                comboBoxRunner.Items.Add(string.Join(" ", item));
             }
+
         }
 
         private void textBoxName_Enter(object sender, EventArgs e)//происходит когда элемент стает активным
@@ -208,6 +207,11 @@ namespace MarSkills
             Glavnaya gl = new Glavnaya();
             gl.Show();
             this.Hide();
+        }
+
+        private void comboBoxRunner_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

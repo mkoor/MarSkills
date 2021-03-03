@@ -99,6 +99,7 @@
             this.buttonRezults.TabIndex = 85;
             this.buttonRezults.Text = "Мои результаты";
             this.buttonRezults.UseVisualStyleBackColor = false;
+            this.buttonRezults.Click += new System.EventHandler(this.buttonRezults_Click);
             // 
             // buttonRegistr
             // 
@@ -197,6 +198,7 @@
             this.Controls.Add(this.labelRun);
             this.Controls.Add(this.Logo);
             this.Name = "RunnerMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Меню бегуна";
             this.Load += new System.EventHandler(this.RunnerMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();

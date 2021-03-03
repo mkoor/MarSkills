@@ -182,6 +182,7 @@
             this.labelDollars.TabIndex = 103;
             this.labelDollars.Text = "500$";
             this.labelDollars.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelDollars.Click += new System.EventHandler(this.labelDollars_Click);
             // 
             // labelMoney
             // 
@@ -278,6 +279,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Вариант А (0$): Номер бегуна +\r\nRFID браслет.";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -290,6 +292,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Вариант B (20$): вариант А + \r\nбейсболка + бутылка воды.\r\n";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -302,6 +305,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Вариант С (45$): вариант В + \r\nфутболка + сувенирный буклет.\r\n";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // Logo
             // 

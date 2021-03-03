@@ -53,5 +53,12 @@ namespace MarSkills
             erp.Show();
             this.Hide();
         }
+
+        private void buttonRezults_Click(object sender, EventArgs e)
+        {
+            MyRaceRezults mrr = new MyRaceRezults();
+            mrr.Show();
+            this.Hide();
+        }
     }
 }

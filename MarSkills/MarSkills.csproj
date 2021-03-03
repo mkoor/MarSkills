@@ -94,6 +94,12 @@
     <Compile Include="Glavnaya.Designer.cs">
       <DependentUpon>Glavnaya.cs</DependentUpon>
     </Compile>
+    <Compile Include="HowLong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowLong.Designer.cs">
+      <DependentUpon>HowLong.cs</DependentUpon>
+    </Compile>
     <Compile Include="InfoAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelSkills.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="MyRaceRezults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyRaceRezults.Designer.cs">
+      <DependentUpon>MyRaceRezults.cs</DependentUpon>
     </Compile>
     <Compile Include="Position.cs">
       <DependentUpon>ModelSkills.tt</DependentUpon>
@@ -222,6 +234,9 @@
     <EmbeddedResource Include="Glavnaya.resx">
       <DependentUpon>Glavnaya.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HowLong.resx">
+      <DependentUpon>HowLong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InfoAbout.resx">
       <DependentUpon>InfoAbout.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyRaceRezults.resx">
+      <DependentUpon>MyRaceRezults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

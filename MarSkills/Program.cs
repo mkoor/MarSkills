@@ -6,8 +6,16 @@ using System.Windows.Forms;
 
 namespace MarSkills
 {
+    public struct Users
+    {
+        public string login;
+        public string password;
+        public string type;
+    }
+
     static class Program
     {
+
         public static MarathonSkillsEntities1  mskills = new MarathonSkillsEntities1();
         /// <summary>
         /// Главная точка входа для приложения.

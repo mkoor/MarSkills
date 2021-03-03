@@ -115,5 +115,10 @@ namespace MarSkills
                 comboBoxCountry.Text = "";
             }
         }
+
+        private void pictureBoxImage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

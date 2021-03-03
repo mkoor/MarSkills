@@ -124,6 +124,7 @@
             this.buttonAboutMar.TabIndex = 73;
             this.buttonAboutMar.Text = "Насколько долгий марафон";
             this.buttonAboutMar.UseVisualStyleBackColor = false;
+            this.buttonAboutMar.Click += new System.EventHandler(this.buttonAboutMar_Click);
             // 
             // buttonResult
             // 

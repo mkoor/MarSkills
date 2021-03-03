@@ -45,5 +45,12 @@ namespace MarSkills
             los.Show();
             this.Hide();
         }
+
+        private void buttonAboutMar_Click(object sender, EventArgs e)
+        {
+            HowLong hl = new HowLong();
+            hl.Show();
+            this.Hide();
+        }
     }
 }

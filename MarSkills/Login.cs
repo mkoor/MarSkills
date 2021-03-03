@@ -12,6 +12,7 @@ namespace MarSkills
 {
     public partial class Login : Form
     {
+        public static Users users = new Users();
         public Login()
         {
             InitializeComponent();
@@ -72,8 +73,13 @@ namespace MarSkills
             this.textBoxPassword.ForeColor = System.Drawing.SystemColors.MenuText;
             this.textBoxPassword.Location = new System.Drawing.Point(127, 178);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(207, 22);
             this.textBoxPassword.TabIndex = 91;
+            this.textBoxPassword.Text = "Введите ваш пароль";
+            this.textBoxPassword.Click += new System.EventHandler(this.textBoxPassword_TextChanged);
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
+            this.textBoxPassword.VisibleChanged += new System.EventHandler(this.textBoxPassword_VisibleChanged);
             // 
             // textBoxEmail
             // 
@@ -83,6 +89,9 @@ namespace MarSkills
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(207, 22);
             this.textBoxEmail.TabIndex = 90;
+            this.textBoxEmail.Text = "Введите вашу почту";
+            this.textBoxEmail.Click += new System.EventHandler(this.textBoxEmail_TextChanged);
+            this.textBoxEmail.TextChanged += new System.EventHandler(this.textBoxEmail_TextChanged);
             // 
             // labelPassword
             // 
@@ -121,6 +130,7 @@ namespace MarSkills
             this.buttonIn.TabIndex = 93;
             this.buttonIn.Text = "Войти";
             this.buttonIn.UseVisualStyleBackColor = false;
+            this.buttonIn.Click += new System.EventHandler(this.buttonIn_Click);
             // 
             // buttonCancel
             // 
@@ -153,6 +163,7 @@ namespace MarSkills
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
+            this.VisibleChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -174,6 +185,79 @@ namespace MarSkills
             Glavnaya gl = new Glavnaya();
             gl.Show();
             this.Hide();
+        }
+
+        private void textBoxPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxPassword.Text == "Введите ваш пароль")
+            {
+                textBoxPassword.Text = "";
+            }
+        }
+
+        private void textBoxEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxEmail.Text == "Введите вашу почту")
+            {
+                textBoxEmail.Text = "";
+            }
+        }
+
+        private void buttonIn_Click(object sender, EventArgs e)
+        {
+            if (textBoxEmail.Text == "" && textBoxPassword.Text == "")
+            {
+                MessageBox.Show("Введите данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                bool key = false;
+                foreach (User user in Program.mskills.User)
+                {
+                    if (textBoxEmail.Text == user.Email && textBoxPassword.Text == user.Password)
+                    {
+                        key = true;
+                        users.login = user.Email;
+                        users.password = user.Password;
+                        users.type = user.RoleId;
+                    }
+                }
+                if (!key)
+                {
+                    MessageBox.Show("Проверьте данные", "Пользователь не найден", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBoxEmail.Text = "";
+                    textBoxPassword.Text = "";
+                }
+                else
+                {
+                    if (users.type == "R")
+                    {
+                        Close();
+                        RunnerMenu runnerMenu = new RunnerMenu();
+                        runnerMenu.Show();
+                        this.Hide();
+                    }
+                    else if (users.type == "A")
+                    {
+                        Close();
+                        AdminMenu administratorMenu = new AdminMenu();
+                        administratorMenu.Show();
+                        this.Hide();
+                    }
+                    else if (users.type == "C")
+                    {
+                        Close();
+                        CoordinatorMenu coordinatorMenu = new CoordinatorMenu();
+                        coordinatorMenu.Show();
+                        this.Hide();
+                    }
+                }
+            }
+        }
+
+        private void textBoxPassword_VisibleChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,68 +45,41 @@ namespace MarSkills
         {
             if (checkBox1.Checked)
             {
-                if (checkBox2.Checked)
-                {
-                    a = 220;
-                    labelDollars.Text = a + "$";  
-                }
-                else if (checkBox3.Checked)
-                {
-                    a = 165;
-                    labelDollars.Text = a + "$";
-                }
-                else { a = 145; labelDollars.Text = a + "$"; }
+                a = a + 145;
+                labelDollars.Text = Convert.ToString(a) + "$";
             }
-            else if (checkBox1.Checked && checkBox2.Checked && checkBox3.Checked)
+            else
             {
-                a = 240;
-                labelDollars.Text = a + "$";
+                a = a - 145;
+                labelDollars.Text = Convert.ToString(a) + "$";
             }
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked)
-            { 
-                if (checkBox1.Checked)
-                {
-                    a = 220;
-                    labelDollars.Text = a + "$";
-                }
-                else if (checkBox1.Checked && checkBox3.Checked)
-                {
-                    a = 240;
-                    labelDollars.Text = a + "$";
-                }
-                else if (checkBox3.Checked)
-                {
-                    a = 95;
-                    labelDollars.Text = a + "$";
-                }
-                else { a = 75; labelDollars.Text = a + "$"; }
+            {
+                a = a + 75;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+            else
+            {
+                a = a - 75;
+                labelDollars.Text = Convert.ToString(a) + "$";
             }
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked)
-            {                
-                if (checkBox1.Checked)
-                {
-                    a = 165;
-                    labelDollars.Text = a + "$";
-                }
-                else if (checkBox1.Checked && checkBox2.Checked) 
-                {
-                    a = 240;
-                    labelDollars.Text = a + "$";
-                }
-                else if (checkBox2.Checked)
-                {
-                    a = 95;
-                    labelDollars.Text = a + "$";
-                }
-                else { a = 20; labelDollars.Text = a + "$"; }
+            {
+                a = a + 20;
+                labelDollars.Text = "$" + Convert.ToString(a);
+            }
+            else
+            {
+                a = a - 20;
+                labelDollars.Text = "$" + Convert.ToString(a);
             }
         }
 
@@ -131,6 +104,53 @@ namespace MarSkills
             {
                 textBoxPrice.Text = "";
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                a = a + 0;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+            else
+            {
+                a = a - 0;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                a = a + 20;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+            else
+            {
+                a = a - 20;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                a = a + 45;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+            else
+            {
+                a = a - 45;
+                labelDollars.Text = Convert.ToString(a) + "$";
+            }
+        }
+
+        private void labelDollars_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

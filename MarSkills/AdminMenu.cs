@@ -29,15 +29,16 @@ namespace MarSkills
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            Glavnaya gl = new Glavnaya();
-            gl.Show();
+            Login log = new Login();
+            log.Show();
             this.Hide();
+            
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            ListOfCharities los = new ListOfCharities();
-            los.Show();
+            Glavnaya gl = new Glavnaya();
+            gl.Show();
             this.Hide();
         }
     }
